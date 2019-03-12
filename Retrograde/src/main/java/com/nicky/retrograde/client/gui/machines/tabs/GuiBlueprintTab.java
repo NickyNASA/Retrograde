@@ -37,8 +37,8 @@ public class GuiBlueprintTab extends GuiRetrograde
 	{
 		super.initGui();
 		
-		//this.addElement(new GuiElementSlot(this, 15, 36, SlotType.ACTIVE));
-		//this.addElement(new GuiElementSlot(this, 15, 62, SlotType.ACTIVE));
+		this.addElement(new GuiElementSlot(this, 15, 36, SlotType.ACTIVE));
+		this.addElement(new GuiElementSlot(this, 15, 62, SlotType.ACTIVE));
 		this.addElement(new GuiElementScrollBar(this, 149, 19, 66));
 		
 		
