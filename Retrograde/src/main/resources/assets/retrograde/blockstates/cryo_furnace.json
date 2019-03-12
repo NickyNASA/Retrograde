@@ -1,0 +1,12 @@
+{
+	"variants": {
+		"processing=false,facing=north": { "model": "retrograde:cryo_furnace" },
+		"processing=false,facing=east": { "model": "retrograde:cryo_furnace", "y": 90 },
+		"processing=false,facing=south": { "model": "retrograde:cryo_furnace", "y": 180 },
+		"processing=false,facing=west": { "model": "retrograde:cryo_furnace", "y": 270 },
+		"processing=true,facing=north": { "model": "retrograde:lit_cryo_furnace" },
+		"processing=true,facing=east": { "model": "retrograde:lit_cryo_furnace", "y": 90 },
+		"processing=true,facing=south": { "model": "retrograde:lit_cryo_furnace", "y": 180 },
+		"processing=true,facing=west": { "model": "retrograde:lit_cryo_furnace", "y": 270 }
+	}
+}

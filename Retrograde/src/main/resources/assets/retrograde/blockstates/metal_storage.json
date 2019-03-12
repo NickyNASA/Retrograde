@@ -1,0 +1,9 @@
+{
+	"variants": {
+		"type=copper": { "model": "retrograde:copper_block" },
+		"type=tin": { "model": "retrograde:tin_block" },
+		"type=aluminum": { "model": "retrograde:aluminum_block" },
+		"type=steel": { "model": "retrograde:steel_block" },
+		"type=titanium": { "model": "retrograde:titanium_block" }
+	}
+}

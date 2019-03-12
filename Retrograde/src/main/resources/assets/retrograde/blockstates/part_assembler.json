@@ -1,0 +1,12 @@
+{
+	"variants": {
+		"facing=north,processing=false": { "model": "retrograde:part_assembler" },
+		"facing=east,processing=false":  { "model": "retrograde:part_assembler", "y": 90 },
+		"facing=south,processing=false": { "model": "retrograde:part_assembler", "y": 180 },
+		"facing=west,processing=false":  { "model": "retrograde:part_assembler", "y": 270 },
+		"facing=north,processing=true":  { "model": "retrograde:part_assembler_active" },
+		"facing=east,processing=true":   { "model": "retrograde:part_assembler_active", "y": 90 },
+		"facing=south,processing=true":  { "model": "retrograde:part_assembler_active", "y": 180 },
+		"facing=west,processing=true":   { "model": "retrograde:part_assembler_active", "y": 270 }
+	}
+}

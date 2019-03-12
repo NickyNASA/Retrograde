@@ -1,0 +1,48 @@
+
+// Items
+item.blueprint.name=Blueprint
+item.ruby.name=Ruby
+
+item.copper_nugget.name=Copper Nugget
+item.tin_nugget.name=Tin Nugget
+item.aluminum_nugget.name=Aluminum Nugget
+item.steel_nugget.name=Steel Nugget
+item.titanium_nugget.name=Titanium Nugget
+
+item.copper_ingot.name=Copper Ingot
+item.tin_ingot.name=Tin Ingot
+item.aluminum_ingot.name=Aluminum Ingot
+item.steel_ingot.name=Steel Ingot
+item.titanium_ingot.name=Titanium Ingot
+
+
+// Tools
+
+
+// Armor
+
+
+// Blocks
+tile.ruby_block.name=Ruby Block
+tile.metal_storage.copper_block.name=Block of Copper
+tile.metal_storage.tin_block.name=Block of Tin
+tile.metal_storage.aluminum_block.name=Block of Aluminum
+tile.metal_storage.steel_block.name=Block of Steel
+tile.metal_storage.titanium_block.name=Block of Titanium
+
+
+// Tile Entities
+tile.cryo_furnace.name=Cryo Furnace
+tile.metal_alloyer.name=Metal Alloyer
+tile.blueprint_table.name=Blueprint Table
+tile.part_assembler.name=Part Assembler
+
+// Containers
+container.cryo_furnace=Cryo Furnace
+
+// Gui Descriptions
+desc.blueprint.materials=Required Materials: §3§nHold Shift§r
+desc.blueprint.materials_shift=Required Materials:
+
+// Creative Tabs
+itemGroup.tabRetrograde=Retrograde

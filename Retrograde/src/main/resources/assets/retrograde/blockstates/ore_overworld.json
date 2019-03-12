@@ -1,0 +1,7 @@
+{
+	"variants":
+	{
+		"variants-copper": { "model": "absolutezero:ore_overworld_copper" },
+		"variants-ruby": { "model": "absolutezero:ore_overworld_ruby" }
+	}
+}

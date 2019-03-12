@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:crafting_shaped",
+	
+	"pattern":
+	[
+		"III",
+		"III",
+		"III"
+	],
+	
+	"key":
+	{
+		"I":
+		{
+			"type": "forge:ore_dict",
+			"ore": "ingotTin"
+		}
+	},
+	
+	"result":
+	{
+		"item": "retrograde:metal_storage",
+		"data": 1,
+		"count": 1
+	}
+}
