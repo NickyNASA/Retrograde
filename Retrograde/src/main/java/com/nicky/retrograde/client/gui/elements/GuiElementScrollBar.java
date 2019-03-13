@@ -39,8 +39,8 @@ public class GuiElementScrollBar extends GuiElementBase
 	{
 		RenderHelper.bindTexture(this.texture);
 		
-		int offset = this.canScroll ? 0 : 10;
-		drawTexturedModalRect(posX, posY + currentScroll, textureX + offset, textureY, sizeX, sizeY);
+		int textureOffset = this.canScroll ? 0 : 10;
+		drawTexturedModalRect(posX, posY + currentScroll, textureX + textureOffset, textureY, sizeX, sizeY);
 	}
 
 	@Override

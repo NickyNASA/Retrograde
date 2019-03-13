@@ -1,6 +1,7 @@
 package com.nicky.retrograde.common.container.machines;
 
 import com.nicky.retrograde.api.helpers.GuiHelper;
+import com.nicky.retrograde.common.container.base.ContainerBlueprintBase;
 import com.nicky.retrograde.common.container.base.ContainerRetrograde;
 import com.nicky.retrograde.common.tileentity.machines.TileEntityCircuitAssembler;
 
@@ -9,7 +10,7 @@ import net.minecraft.inventory.IContainerListener;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ContainerCircuitAssembler extends ContainerRetrograde
+public class ContainerCircuitAssembler extends ContainerBlueprintBase
 {
 	private TileEntityCircuitAssembler tileentity;
 	

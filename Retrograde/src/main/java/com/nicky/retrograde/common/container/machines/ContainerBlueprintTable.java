@@ -135,6 +135,7 @@ public class ContainerBlueprintTable extends ContainerRetrograde
 		}
 		
 		compound.setTag("Materials", materialList);
+		//	compound.setString("Name", name);
 		
 		return compound;
 	}

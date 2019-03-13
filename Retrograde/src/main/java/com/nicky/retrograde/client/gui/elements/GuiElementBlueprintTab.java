@@ -14,9 +14,8 @@ import net.minecraft.util.math.BlockPos;
 
 public class GuiElementBlueprintTab extends GuiElementBase
 {
-private static final ResourceLocation DEFAULT_TEXTURE = RenderHelper.makeGuiTextureLocation("gui_buttons");
+	private static final ResourceLocation DEFAULT_TEXTURE = RenderHelper.makeGuiTextureLocation("gui_buttons");
 	
-	protected boolean hovered = false;
 	protected int activeTextureX;
 	protected int activeTextureY;
 	private int prevGuiID;
@@ -36,9 +35,6 @@ private static final ResourceLocation DEFAULT_TEXTURE = RenderHelper.makeGuiText
 		
 		this.textureX = 0;
 		this.textureY = 26;
-		
-		this.activeTextureX = 25;
-		this.activeTextureY = 26;
 	}
 	
 	private boolean isMouseOver(int mouseX, int mouseY)
@@ -56,11 +52,8 @@ private static final ResourceLocation DEFAULT_TEXTURE = RenderHelper.makeGuiText
 	{
 		RenderHelper.bindTexture(this.texture);
 		
-		if(isMouseOver(mouseX, mouseY)){
-			drawTexturedModalRect(posX, posY, activeTextureX, activeTextureY, sizeX, sizeY);
-		}else{
-			drawTexturedModalRect(posX, posY, textureX, textureY, sizeX, sizeY);
-		}
+		int textureOffset = isMouseOver(mouseX, mouseY) ? 25 : 0;
+		drawTexturedModalRect(posX, posY, textureX + textureOffset, textureY, sizeX, sizeY);
 	}
 
 	@Override

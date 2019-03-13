@@ -38,7 +38,6 @@ public class ItemBlueprint extends ItemRetrograde
 				ArrayList<ItemStack> items = NBTHelper.getMaterialsFromNBT(compound);
 				
 				for(ItemStack item : items){
-				
 					tooltip.add(String.format("%1$sx %2$s", item.getCount(), item.getDisplayName()));
 				}
 				

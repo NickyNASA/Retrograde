@@ -7,6 +7,7 @@ import org.jline.utils.Log;
 import com.nicky.retrograde.api.helpers.RenderHelper;
 import com.nicky.retrograde.api.interfaces.IBlueprintTile;
 import com.nicky.retrograde.client.gui.base.GuiRetrograde;
+import com.nicky.retrograde.client.gui.elements.GuiElementButtonInsert;
 import com.nicky.retrograde.client.gui.elements.GuiElementScrollBar;
 import com.nicky.retrograde.client.gui.elements.GuiElementSlot;
 import com.nicky.retrograde.client.gui.elements.GuiElementSlot.SlotType;
@@ -41,6 +42,7 @@ public class GuiBlueprintTab extends GuiRetrograde
 		this.addElement(new GuiElementSlot(this, 15, 62, SlotType.ACTIVE));
 		this.addElement(new GuiElementScrollBar(this, 149, 19, 66));
 		
+		this.addElement(new GuiElementButtonInsert(this, 0, 0, 0));
 		
 		this.searchBar = new GuiTextField(0, this.fontRenderer, 50, 19, 97, this.fontRenderer.FONT_HEIGHT);
 		this.searchBar.setTextColor(-1);
