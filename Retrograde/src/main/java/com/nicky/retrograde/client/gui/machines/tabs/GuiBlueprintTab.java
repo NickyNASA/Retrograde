@@ -42,7 +42,7 @@ public class GuiBlueprintTab extends GuiRetrograde
 		this.addElement(new GuiElementSlot(this, 15, 62, SlotType.ACTIVE));
 		this.addElement(new GuiElementScrollBar(this, 149, 19, 66));
 		
-		this.addElement(new GuiElementButtonInsert(this, 0, 0, 0));
+		this.addElement(new GuiElementButtonInsert(this, 35, 36, 0));
 		
 		this.searchBar = new GuiTextField(0, this.fontRenderer, 50, 19, 97, this.fontRenderer.FONT_HEIGHT);
 		this.searchBar.setTextColor(-1);
@@ -74,7 +74,6 @@ public class GuiBlueprintTab extends GuiRetrograde
 			super.keyTyped(typedChar, keyCode);	
 		}
 	}
-	
 	
 	@Override
 	protected void mouseClicked(int mouseX, int mouseY, int button) throws IOException
