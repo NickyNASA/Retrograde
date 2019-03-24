@@ -56,6 +56,8 @@ private static final ResourceLocation DEFAULT_TEXTURE = RenderHelper.makeGuiText
 	{
 		RenderHelper.bindTexture(this.texture);
 		
+		this.hovered = isMouseOver(mouseX, mouseY);
+		
 		if(isMouseOver(mouseX, mouseY)){
 			drawTexturedModalRect(posX, posY, activeTextureX, activeTextureY, sizeX, sizeY);
 		}else{
