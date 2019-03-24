@@ -16,6 +16,7 @@ public class GuiElementBlueprintTab extends GuiElementBase
 {
 	private static final ResourceLocation DEFAULT_TEXTURE = RenderHelper.makeGuiTextureLocation("gui_buttons");
 	
+	protected boolean hovered = false;
 	protected int activeTextureX;
 	protected int activeTextureY;
 	private int prevGuiID;
@@ -52,7 +53,9 @@ public class GuiElementBlueprintTab extends GuiElementBase
 	{
 		RenderHelper.bindTexture(this.texture);
 		
-		int textureOffset = isMouseOver(mouseX, mouseY) ? 25 : 0;
+		this.hovered = isMouseOver(mouseX, mouseY);
+		int textureOffset = this.hovered ? 25 : 0;
+		
 		drawTexturedModalRect(posX, posY, textureX + textureOffset, textureY, sizeX, sizeY);
 	}
 
@@ -65,7 +68,7 @@ public class GuiElementBlueprintTab extends GuiElementBase
 	@Override
 	public void mouseClicked(int mouseX, int mouseY, int button)
 	{
-		if(isMouseOver(mouseX, mouseY)){
+		if(this.hovered){
 			BlockPos pos = this.tileentity.getPos();
 			
 			PacketHandler.network.sendToServer(new PacketChangeGui.ChangeGuiMessage(GuiTypes.BLUEPRINT_TAB.ordinal(), pos));
@@ -75,6 +78,8 @@ public class GuiElementBlueprintTab extends GuiElementBase
 	@Override
 	public void addTooltip(List<String> list)
 	{
-		list.add("Blueprints");
+		if(this.hovered){
+			list.add("Blueprints");
+		}
 	}
 }

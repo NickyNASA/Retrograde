@@ -38,9 +38,6 @@ public class GuiElementUpgradeTab extends GuiElementBase
 		
 		this.textureX = 0;
 		this.textureY = 0;
-		
-		this.activeTextureX = 25;
-		this.activeTextureY = 0;
 	}
 	
 	private boolean isMouseOver(int mouseX, int mouseY)
@@ -58,11 +55,10 @@ public class GuiElementUpgradeTab extends GuiElementBase
 	{
 		RenderHelper.bindTexture(this.texture);
 		
-		if(isMouseOver(mouseX, mouseY)){
-			drawTexturedModalRect(posX, posY, activeTextureX, activeTextureY, sizeX, sizeY);
-		}else{
-			drawTexturedModalRect(posX, posY, textureX, textureY, sizeX, sizeY);
-		}
+		this.hovered = isMouseOver(mouseX, mouseY);
+		int textureOffset = this.hovered ? 25 : 0;
+		
+		drawTexturedModalRect(posX, posY, textureX + textureOffset, textureY, sizeX, sizeY);
 	}
 
 	@Override
@@ -74,7 +70,7 @@ public class GuiElementUpgradeTab extends GuiElementBase
 	@Override
 	public void mouseClicked(int mouseX, int mouseY, int button)
 	{
-		if(isMouseOver(mouseX, mouseY)){
+		if(this.hovered){
 			Log.info("Clicked on upgrade tab");
 			BlockPos pos = this.tileentity.getPos();
 			
@@ -85,6 +81,8 @@ public class GuiElementUpgradeTab extends GuiElementBase
 	@Override
 	public void addTooltip(List<String> list)
 	{
-		list.add("Upgrades");
+		if(this.hovered){
+			list.add("Upgrades");
+		}
 	}
 }
