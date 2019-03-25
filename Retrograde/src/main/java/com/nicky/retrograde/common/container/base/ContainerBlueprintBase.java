@@ -9,17 +9,18 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerBlueprintBase extends ContainerRetrograde
 {
-	//private IBlueprintTile tileentity;
-	
 	protected ArrayList<ItemStack> blueprints;
 	
 	public ContainerBlueprintBase(InventoryPlayer inventory, int xOffset, int yOffset)
 	{
 		super(inventory, xOffset, yOffset);
 		
-		
+		this.blueprints = this.tileentity.blueprints;
 	}
 	
+	/*
+	Might need to add the blueprint arrayList to the detectAndSendChanges function.
+	*/
 	public void onAddBlueprintPacket()
 	{
 		ItemStack stack = this.handler.getStackInSlot(this.tileentity.BLUEPRINT_SLOT).copy();
@@ -36,7 +37,6 @@ public class ContainerBlueprintBase extends ContainerRetrograde
 		ItemStack stack = this.handler.getStackInSlot(this.tileentity.BLUEPRINT_SLOT + 1).copy();
 		
 		if(stack == null && stack == ItemStack.EMPTY){
-			NBTTagCompound compound = 
 			ItemStack newStack = this.blueprints.get(selectedIndex);
 			
 			this.handler.putStackInSlot(this.tileentity.BLUEPRINT_SLOT + 1, newStack);
