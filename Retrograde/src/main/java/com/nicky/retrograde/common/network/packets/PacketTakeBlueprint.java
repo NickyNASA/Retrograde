@@ -14,10 +14,9 @@ public class PacketTakeBlueprint implements IMessageHandler<PacketTakeBlueprint.
 	public IMessage onMessage(TakeBlueprintMessage message, MessageContext ctx)
 	{
 		EntityPlayer player = ctx.getServerHandler().player;
+		ContainerBlueprintBase container = (ContainerBlueprintBase)player.openContainer;
 		
-		Container container = player.openContainer;
-		//container.onTakeBlueprintPacket();
-		container.detectAndSendChanges();
+		container.onTakeBlueprintPacket();
 		
 		return null;
 	}
