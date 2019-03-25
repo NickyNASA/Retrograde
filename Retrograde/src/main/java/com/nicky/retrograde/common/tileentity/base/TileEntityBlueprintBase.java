@@ -7,17 +7,12 @@ import net.minecraft.nbt.NBTTagList;
 
 public abstract class TileEntityBlueprintBase extends TileEntityPoweredBase
 {
-        ArrayList<ItemStack> blueprints = new ArrayList<ItemStack>();
+        public ArrayList<ItemStack> blueprints = new ArrayList<ItemStack>();
         
         public TileEntityBlueprintBase(String name, int inventorySlots)
         {
                 super(name, inventorySlots);
                 
-        }
-        
-        public ArrayList<ItemStack> getBlueprints()
-        {
-                return this.blueprints;
         }
         
         @Override
