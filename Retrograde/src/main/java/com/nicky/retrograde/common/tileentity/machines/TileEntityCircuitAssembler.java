@@ -119,6 +119,8 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 			return this.getEnergyStored();
 		case 3:
 			return this.getMaxEnergyStored();
+		case 4:
+			return this.blueprints;
 		default:
 			return 0;
 		}
