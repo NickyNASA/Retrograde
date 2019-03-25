@@ -11,7 +11,7 @@ public class ContainerBlueprintBase extends ContainerRetrograde
 {
 	//private IBlueprintTile tileentity;
 	
-	protected ArrayList<ItemStack> storedBlueprints;
+	protected ArrayList<ItemStack> blueprints;
 	
 	public ContainerBlueprintBase(InventoryPlayer inventory, int xOffset, int yOffset)
 	{
