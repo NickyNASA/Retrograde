@@ -1,5 +1,11 @@
 package com.nicky.retrograde.common.container.slot;
 
+import com.nicky.retrograde.api.interfaces.ISlotValidator;
+
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.SlotItemHandler;
+
 public class SlotFiltered extends SlotItemHandler implements ISlotValidator
 {
         public ItemStack filter;
