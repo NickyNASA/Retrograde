@@ -9,6 +9,8 @@ public class GuiElementButtonInsert extends GuiElementBase
 {
 	private static final ResourceLocation DEFAULT_TEXTURE = RenderHelper.makeGuiTextureLocation("gui_buttons");
 	
+	protected boolean hovered = false;
+	
 	public GuiElementButtonInsert(GuiContainer gui, int posX, int posY, int mode)
 	{
 		super(gui, posX, posY);
@@ -35,7 +37,8 @@ public class GuiElementButtonInsert extends GuiElementBase
 	{
 		RenderHelper.bindTexture(this.texture);
 		
-		int textureOffset = isMouseOver(mouseX, mouseY) ? 10 : 0;
+		this.hovered = isMouseOver(mouseX, mouseY);
+		int textureOffset = this.hovered ? 10 : 0;
 		drawTexturedModalRect(posX, posY, textureX + textureOffset, textureY, sizeX, sizeY);
 	}
 
@@ -56,7 +59,7 @@ public class GuiElementButtonInsert extends GuiElementBase
 	public void mouseClicked(int mouseX, int mouseY, int button)
 	{
 		if(button == 0) {
-			if(isMouseOver(mouseX, mouseY)){
+			if(this.hovered){
 				
 			}
 		}
