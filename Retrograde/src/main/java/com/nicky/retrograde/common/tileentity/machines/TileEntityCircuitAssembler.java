@@ -79,7 +79,6 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 		
 		this.processTime = compound.getInteger("ProcessTime");
 		this.processMax = compound.getInteger("ProcessMax");
-		this.blueprints = NBTHelper.deserializeBlueprints(compound);
 	}
 	
 	@Override
@@ -89,8 +88,6 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 		
 		compound.setInteger("ProcessTime", this.processTime);
 		compound.setInteger("ProcessMax", this.processMax);
-		
-		NBTHelper.serializeBlueprints(this.blueprints, compound);
 		
 		return compound;
 	}
@@ -119,8 +116,6 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 			return this.getEnergyStored();
 		case 3:
 			return this.getMaxEnergyStored();
-		case 4:
-			return this.blueprints;
 		default:
 			return 0;
 		}
