@@ -14,7 +14,7 @@ public class PacketAddBlueprint implements IMessageHandler<PacketAddBlueprint.Ad
 	public IMessage onMessage(AddBlueprintMessage message, MessageContext ctx)
 	{
 		EntityPlayer player = ctx.getServerHandler().player;
-		Container container = (ContainerBlueprintplayer.openContainer;
+		ContainerBlueprintBase container = (ContainerBlueprintBase)player.openContainer;
 		
 		container.onAddBlueprintPacket();
 		
