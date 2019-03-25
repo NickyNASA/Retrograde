@@ -26,6 +26,7 @@ public class ContainerCircuitAssembler extends ContainerBlueprintBase
 		
 		this.tileentity = tile;
 		this.handler = this.tileentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+		this.blueprints = this.tileentity.getField(4);
 		
 		this.addSlotToContainer(new SlotItemHandler(this.handler, 0, 26, 54));
 		
@@ -108,20 +109,15 @@ public class ContainerCircuitAssembler extends ContainerBlueprintBase
 			if(this.energyMax != this.tileentity.getField(3)){
 				listener.sendWindowProperty(this, 3, this.tileentity.getField(3));
 			}
+			//if(this.blueprints != this.tileentity.getField(4)){
+				//listener.sendWindowProperty(this, 4, this.tileentity.getField(4));
+			//}
 		}
 		
 		this.processTime = this.tileentity.getField(0);
 		this.processMax = this.tileentity.getField(1);
 		this.energyStored = this.tileentity.getField(2);
 		this.energyMax = this.tileentity.getField(3);
-	}
-	
-	public void onAddBlueprintPacket()
-	{
-		ItemStack stack = this.handler.getStackInSlot(this.tileentity.BLUEPRINT_SLOT);
-		
-		if(stack != null && stack != ItemStack.EMPTY){
-			// add the blueprint to the Blueprint array in the container
-		}
+		//this.blueprints = this.tileentity.getField(4);
 	}
 }
