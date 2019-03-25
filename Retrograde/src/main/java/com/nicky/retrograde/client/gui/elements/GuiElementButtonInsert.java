@@ -60,7 +60,9 @@ public class GuiElementButtonInsert extends GuiElementBase
 	{
 		if(button == 0) {
 			if(this.hovered){
+				BlockPos pos = this.tileentity.getPos();
 				
+				PacketHandler.network.sendToServer(new PacketAddBlueprint.AddBlueprintMessage(pos));
 			}
 		}
 	}
