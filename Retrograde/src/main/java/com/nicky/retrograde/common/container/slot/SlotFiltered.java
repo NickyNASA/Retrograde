@@ -10,4 +10,10 @@ public class SlotFiltered extends SlotItemHandler implements ISlotValidator
                 
                 this.filter = filter;
         }
+        
+        @Override
+        public boolean isItemValid(ItemStack stack)
+        {
+                return stack.getItem() instanceof this.filter.getItem();
+        }
 }
