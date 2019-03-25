@@ -62,7 +62,7 @@ public class GuiElementBlueprintTab extends GuiElementBase
 	@Override
 	public void drawForeground(int mouseX, int mouseY)
 	{
-		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
