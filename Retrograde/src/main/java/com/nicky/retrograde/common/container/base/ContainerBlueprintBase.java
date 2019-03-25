@@ -20,5 +20,27 @@ public class ContainerBlueprintBase extends ContainerRetrograde
 		
 	}
 	
+	public void onAddBlueprintPacket()
+	{
+		ItemStack stack = this.handler.getStackInSlot(this.tileentity.BLUEPRINT_SLOT).copy();
+		
+		if(stack != null && stack != ItemStack.EMPTY){
+			this.blueprints.add(stack);
+			this.handler.putStackInSlot(this.tileentity.BLUEPRINT_SLOT, ItemStack.EMPTY);
+			this.detectAndSendChanges();
+		}
+	}
 	
+	public void onTakeBlueprintPacket(int selectedIndex)
+	{
+		ItemStack stack = this.handler.getStackInSlot(this.tileentity.BLUEPRINT_SLOT + 1).copy();
+		
+		if(stack == null && stack == ItemStack.EMPTY){
+			NBTTagCompound compound = 
+			ItemStack newStack = this.blueprints.get(selectedIndex);
+			
+			this.handler.putStackInSlot(this.tileentity.BLUEPRINT_SLOT + 1, newStack);
+			this.detectAndSendChanges();
+		}
+	}
 }
