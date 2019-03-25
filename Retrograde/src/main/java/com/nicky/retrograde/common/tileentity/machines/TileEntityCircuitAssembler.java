@@ -1,13 +1,18 @@
 package com.nicky.retrograde.common.tileentity.machines;
 
+import java.util.ArrayList;
+
 import com.nicky.retrograde.api.ItemNames;
+import com.nicky.retrograde.api.helpers.NBTHelper;
 import com.nicky.retrograde.api.interfaces.IBlueprintTile;
 import com.nicky.retrograde.api.interfaces.IHasGui;
 import com.nicky.retrograde.api.interfaces.IProcessingTile;
 import com.nicky.retrograde.api.interfaces.IUpgradeTile;
 import com.nicky.retrograde.common.tileentity.base.TileEntityMultiblockPart;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.ITickable;
 
 public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEntityCircuitAssembler> implements ITickable, IProcessingTile, IUpgradeTile, IBlueprintTile, IHasGui
@@ -17,6 +22,8 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 	
 	public final int UPGRADE_SLOT = 26;
 	public final int BLUEPRINT_SLOT = 34;
+	
+	public ArrayList<ItemStack> blueprints;
 	
 	public TileEntityCircuitAssembler()
 	{
@@ -72,6 +79,7 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 		
 		this.processTime = compound.getInteger("ProcessTime");
 		this.processMax = compound.getInteger("ProcessMax");
+		this.blueprints = NBTHelper.deserializeBlueprints(compound);
 	}
 	
 	@Override
@@ -81,6 +89,8 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 		
 		compound.setInteger("ProcessTime", this.processTime);
 		compound.setInteger("ProcessMax", this.processMax);
+		
+		NBTHelper.serializeBlueprints(this.blueprints, compound);
 		
 		return compound;
 	}

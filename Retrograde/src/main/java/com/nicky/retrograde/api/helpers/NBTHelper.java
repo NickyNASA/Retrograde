@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraftforge.common.util.Constants;
 
 public final class NBTHelper
 {
@@ -47,6 +48,39 @@ public final class NBTHelper
 	}
 	
 	/* NBT Compounds */
+	public static NBTTagCompound serializeBlueprints(ArrayList<ItemStack> blueprints, NBTTagCompound compound)
+	{
+		NBTTagList nbtTagList = new NBTTagList();
+		
+		for(int i = 0; i < blueprints.size(); i++){
+			NBTTagCompound nbt = new NBTTagCompound();
+			
+			nbt.setInteger("Slot", i);
+			blueprints.get(i).writeToNBT(nbt);
+			nbtTagList.appendTag(nbt);
+		}
+		
+		compound.setTag("Blueprints", nbtTagList);
+		compound.setInteger("Size", blueprints.size());
+		
+		return compound;
+	}
+	
+	public static ArrayList<ItemStack> deserializeBlueprints(NBTTagCompound compound)
+	{
+		ArrayList<ItemStack> blueprints = new ArrayList<ItemStack>();
+		NBTTagList nbtTagList = compound.getTagList("Blueprints", Constants.NBT.TAG_COMPOUND);
+		
+		for(int i = 0; i < nbtTagList.tagCount(); i++){
+			NBTTagCompound itemTags = nbtTagList.getCompoundTagAt(i);
+			
+			int slot = itemTags.getInteger("Slot");
+			blueprints.set(slot, new ItemStack(itemTags));
+		}
+		
+		return blueprints;
+	}
+	
 	public static NBTTagCompound getTag(ItemStack stack)
 	{
 		if(!stack.hasTagCompound()){
