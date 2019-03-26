@@ -16,10 +16,9 @@ public class PacketSaveToBlueprint implements IMessageHandler<PacketSaveToBluepr
 	public IMessage onMessage(SaveToBlueprintMessage message, MessageContext ctx)
 	{
 		EntityPlayer player = ctx.getServerHandler().player;
-		
 		ContainerBlueprintTable container = (ContainerBlueprintTable)player.openContainer;
+		
 		container.onBlueprintPacket();
-		container.detectAndSendChanges();
 	
 		return null;
 	}

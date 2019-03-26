@@ -1,9 +1,13 @@
 package com.nicky.retrograde.client.gui.elements;
 
 import com.nicky.retrograde.api.helpers.RenderHelper;
+import com.nicky.retrograde.common.network.PacketHandler;
+import com.nicky.retrograde.common.network.packets.PacketAddBlueprint;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 
 public class GuiElementButtonInsert extends GuiElementBase
 {
@@ -11,10 +15,13 @@ public class GuiElementButtonInsert extends GuiElementBase
 	
 	protected boolean hovered = false;
 	
-	public GuiElementButtonInsert(GuiContainer gui, int posX, int posY, int mode)
+	public TileEntity tileentity;
+	
+	public GuiElementButtonInsert(GuiContainer gui, TileEntity tile, int posX, int posY, int mode)
 	{
 		super(gui, posX, posY);
 		
+		this.tileentity = tile;
 		this.texture = DEFAULT_TEXTURE;
 		
 		this.sizeX = 10;
@@ -60,7 +67,9 @@ public class GuiElementButtonInsert extends GuiElementBase
 	{
 		if(button == 0) {
 			if(this.hovered){
+				BlockPos pos = this.tileentity.getPos();
 				
+				PacketHandler.network.sendToServer(new PacketAddBlueprint.AddBlueprintMessage(pos));
 			}
 		}
 	}

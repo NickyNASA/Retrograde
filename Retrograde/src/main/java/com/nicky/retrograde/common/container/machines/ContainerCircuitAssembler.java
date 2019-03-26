@@ -1,7 +1,7 @@
 package com.nicky.retrograde.common.container.machines;
 
 import com.nicky.retrograde.api.helpers.GuiHelper;
-import com.nicky.retrograde.common.container.base.ContainerBlueprintBase;
+import com.nicky.retrograde.common.container.base.ContainerMachineBase;
 import com.nicky.retrograde.common.tileentity.machines.TileEntityCircuitAssembler;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ContainerCircuitAssembler extends ContainerBlueprintBase
+public class ContainerCircuitAssembler extends ContainerMachineBase
 {
 	private TileEntityCircuitAssembler tileentity;
 	
@@ -114,14 +114,5 @@ public class ContainerCircuitAssembler extends ContainerBlueprintBase
 		this.processMax = this.tileentity.getField(1);
 		this.energyStored = this.tileentity.getField(2);
 		this.energyMax = this.tileentity.getField(3);
-	}
-	
-	public void onAddBlueprintPacket()
-	{
-		ItemStack stack = this.handler.getStackInSlot(this.tileentity.BLUEPRINT_SLOT);
-		
-		if(stack != null && stack != ItemStack.EMPTY){
-			// add the blueprint to the Blueprint array in the container
-		}
 	}
 }

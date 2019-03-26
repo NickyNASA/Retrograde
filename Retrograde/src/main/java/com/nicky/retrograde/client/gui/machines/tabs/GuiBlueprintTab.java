@@ -5,13 +5,13 @@ import java.io.IOException;
 import org.jline.utils.Log;
 
 import com.nicky.retrograde.api.helpers.RenderHelper;
-import com.nicky.retrograde.api.interfaces.IBlueprintTile;
 import com.nicky.retrograde.client.gui.base.GuiRetrograde;
 import com.nicky.retrograde.client.gui.elements.GuiElementButtonInsert;
 import com.nicky.retrograde.client.gui.elements.GuiElementScrollBar;
 import com.nicky.retrograde.client.gui.elements.GuiElementSlot;
 import com.nicky.retrograde.client.gui.elements.GuiElementSlot.SlotType;
 import com.nicky.retrograde.common.container.machines.ContainerBlueprintTab;
+import com.nicky.retrograde.common.tileentity.base.TileEntityMachineBase;
 
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -21,10 +21,10 @@ public class GuiBlueprintTab extends GuiRetrograde
 {
 	private static final ResourceLocation TEXTURE = RenderHelper.makeGuiTextureLocation("blueprint_tab");//gui_base_medium");
 	
-	public IBlueprintTile tileentity;
+	public TileEntityMachineBase tileentity;
 	private GuiTextField searchBar;
 	
-	public GuiBlueprintTab(InventoryPlayer inventory, IBlueprintTile tile)
+	public GuiBlueprintTab(InventoryPlayer inventory, TileEntityMachineBase tile)
 	{
 		super(new ContainerBlueprintTab(inventory, tile), TEXTURE);
 		
@@ -42,7 +42,7 @@ public class GuiBlueprintTab extends GuiRetrograde
 		this.addElement(new GuiElementSlot(this, 15, 62, SlotType.ACTIVE));
 		this.addElement(new GuiElementScrollBar(this, 149, 19, 66));
 		
-		this.addElement(new GuiElementButtonInsert(this, 35, 36, 0));
+		this.addElement(new GuiElementButtonInsert(this, this.tileentity, 35, 36, 0));
 		
 		this.searchBar = new GuiTextField(0, this.fontRenderer, 50, 19, 97, this.fontRenderer.FONT_HEIGHT);
 		this.searchBar.setTextColor(-1);

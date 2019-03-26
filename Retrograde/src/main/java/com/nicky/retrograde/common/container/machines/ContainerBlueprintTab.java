@@ -1,10 +1,10 @@
 package com.nicky.retrograde.common.container.machines;
 
 import com.nicky.retrograde.api.helpers.GuiHelper;
-import com.nicky.retrograde.api.interfaces.IBlueprintTile;
 import com.nicky.retrograde.common.container.base.ContainerRetrograde;
 import com.nicky.retrograde.common.container.slot.SlotBlueprint;
 import com.nicky.retrograde.common.tileentity.base.TileEntityContainerBase;
+import com.nicky.retrograde.common.tileentity.base.TileEntityMachineBase;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -13,9 +13,9 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerBlueprintTab extends ContainerRetrograde
 {
-	private IBlueprintTile tileentity;
+	private TileEntityMachineBase tileentity;
 	
-	public ContainerBlueprintTab(InventoryPlayer inventory, IBlueprintTile tile)
+	public ContainerBlueprintTab(InventoryPlayer inventory, TileEntityMachineBase tile)
 	{
 		super(inventory, GuiHelper.GUI_MEDIUM_X, GuiHelper.GUI_MEDIUM_Y);
 		

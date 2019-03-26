@@ -1,9 +1,9 @@
 package com.nicky.retrograde.common.network.packets;
 
+import com.nicky.retrograde.common.container.base.ContainerMachineBase;
+
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -14,40 +14,34 @@ public class PacketTakeBlueprint implements IMessageHandler<PacketTakeBlueprint.
 	public IMessage onMessage(TakeBlueprintMessage message, MessageContext ctx)
 	{
 		EntityPlayer player = ctx.getServerHandler().player;
+		ContainerMachineBase container = (ContainerMachineBase)player.openContainer;
 		
-		Container container = player.openContainer;
-		//container.onTakeBlueprintPacket();
-		container.detectAndSendChanges();
+		container.onTakeBlueprintPacket(message.index);
 		
 		return null;
 	}
 	
 	public static class TakeBlueprintMessage implements IMessage
 	{
-		public BlockPos pos;
+		public int index;
 		
 		public TakeBlueprintMessage() {};
 		
-		public TakeBlueprintMessage(BlockPos pos)
+		public TakeBlueprintMessage(int index)
 		{
-			this.pos = pos;
+			this.index = index;
 		}
 		
 		@Override
 		public void fromBytes(ByteBuf buf)
 		{
-			int x = buf.readInt();
-			int y = buf.readInt();
-			int z = buf.readInt();
-			this.pos = new BlockPos(x, y, z);
+			this.index = buf.readInt();
 		}
 
 		@Override
 		public void toBytes(ByteBuf buf)
 		{
-			buf.writeInt(this.pos.getX());
-			buf.writeInt(this.pos.getY());
-			buf.writeInt(this.pos.getZ());
+			buf.writeInt(this.index);
 		}
 	}
 }

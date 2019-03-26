@@ -1,7 +1,5 @@
 package com.nicky.retrograde.common.network.packets;
 
-import org.jline.utils.Log;
-
 import com.nicky.retrograde.Retrograde;
 
 import io.netty.buffer.ByteBuf;
@@ -19,9 +17,9 @@ public class PacketChangeGui implements IMessageHandler<PacketChangeGui.ChangeGu
 	{
 		EntityPlayer player = ctx.getServerHandler().player;
 		
-		Log.info("Attempting to change to gui id: " + message.gui);
-		//player.closeScreen();
+		//Log.info("Attempting to change to gui id: " + message.gui);
 		player.openGui(Retrograde.instance, message.gui, player.world, message.pos.getX(), message.pos.getY(), message.pos.getZ());
+		
 		return null;
 	}
 	

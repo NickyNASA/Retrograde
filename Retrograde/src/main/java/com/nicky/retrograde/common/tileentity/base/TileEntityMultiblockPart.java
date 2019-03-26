@@ -2,12 +2,11 @@ package com.nicky.retrograde.common.tileentity.base;
 
 import net.minecraft.nbt.NBTTagCompound;
 
-public abstract class TileEntityMultiblockPart<T extends TileEntityMultiblockPart<T>> extends TileEntityPoweredBase
+public abstract class TileEntityMultiblockPart<T extends TileEntityMultiblockPart<T>> extends TileEntityMachineBase
 {
 	public boolean isFormed;
 	private T master;
 	private boolean isMaster;
-	
 	
 	protected final int[] multiblockSize;
 	

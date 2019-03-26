@@ -14,8 +14,8 @@ public abstract class TileEntityPoweredBase extends TileEntityContainerBase impl
 {
 	protected CustomEnergyStorage energyStorage;
 	
-	private RedstoneControl redstoneMode = RedstoneControl.DISABLED;
-	public int energy;
+	public RedstoneControl redstoneMode = RedstoneControl.DISABLED;
+	
 	
 	/**
 	 * 
@@ -28,7 +28,6 @@ public abstract class TileEntityPoweredBase extends TileEntityContainerBase impl
 		super(name, inventorySlots);
 		
 		this.energyStorage = new CustomEnergyStorage(maxEnergy);
-		this.energy = this.energyStorage.getEnergyStored();
 	}
 	
 	@Override

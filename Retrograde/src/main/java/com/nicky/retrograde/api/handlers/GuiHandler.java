@@ -1,7 +1,5 @@
 package com.nicky.retrograde.api.handlers;
 
-import com.nicky.retrograde.api.interfaces.IBlueprintTile;
-import com.nicky.retrograde.api.interfaces.IUpgradeTile;
 import com.nicky.retrograde.client.gui.machines.GuiBlueprintTable;
 import com.nicky.retrograde.client.gui.machines.GuiCircuitAssembler;
 import com.nicky.retrograde.client.gui.machines.GuiCircuitAssemblerAdvanced;
@@ -16,6 +14,7 @@ import com.nicky.retrograde.common.container.machines.ContainerCircuitAssemblerA
 import com.nicky.retrograde.common.container.machines.ContainerMetalAlloyer;
 import com.nicky.retrograde.common.container.machines.ContainerPartAssembler;
 import com.nicky.retrograde.common.container.machines.ContainerUpgradeTab;
+import com.nicky.retrograde.common.tileentity.base.TileEntityMachineBase;
 import com.nicky.retrograde.common.tileentity.machines.TileEntityBlueprintTable;
 import com.nicky.retrograde.common.tileentity.machines.TileEntityCircuitAssembler;
 import com.nicky.retrograde.common.tileentity.machines.TileEntityCircuitAssemblerAdvanced;
@@ -58,9 +57,9 @@ public class GuiHandler implements IGuiHandler
 		case METAL_ALLOYER:
 			return new ContainerMetalAlloyer(player.inventory, (TileEntityMetalAlloyer)tile);
 		case UPGRADE_TAB:
-			return new ContainerUpgradeTab(player.inventory, (IUpgradeTile)tile);
+			return new ContainerUpgradeTab(player.inventory, (TileEntityMachineBase)tile);
 		case BLUEPRINT_TAB:
-			return new ContainerBlueprintTab(player.inventory, (IBlueprintTile)tile);
+			return new ContainerBlueprintTab(player.inventory, (TileEntityMachineBase)tile);
 		default:
 			return null;
 		}
@@ -83,9 +82,9 @@ public class GuiHandler implements IGuiHandler
 		case METAL_ALLOYER:
 			return new GuiMetalAlloyer(player.inventory, (TileEntityMetalAlloyer)tile);
 		case UPGRADE_TAB:
-			return new GuiUpgradeTab(player.inventory, (IUpgradeTile) tile);
+			return new GuiUpgradeTab(player.inventory, (TileEntityMachineBase) tile);
 		case BLUEPRINT_TAB:
-			return new GuiBlueprintTab(player.inventory, (IBlueprintTile)tile);
+			return new GuiBlueprintTab(player.inventory, (TileEntityMachineBase)tile);
 		default:
 			return null;
 		}
