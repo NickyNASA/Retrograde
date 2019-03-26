@@ -27,6 +27,7 @@ public class PacketHandler
 		network.registerMessage(PacketAddBlueprint.class, AddBlueprintMessage.class, 18, Side.SERVER);
 		network.registerMessage(PacketTakeBlueprint.class, TakeBlueprintMessage.class, 19, Side.CLIENT);
 		network.registerMessage(PacketTakeBlueprint.class, TakeBlueprintMessage.class, 20, Side.SERVER);
+
 		//network.sendTo(message, player);
 		//network.sendToServer(message);
 	}
