@@ -18,8 +18,8 @@ public abstract class TileEntityMachineBase extends TileEntityPoweredBase
 	public int BLUEPRINT_SLOT;
 	public int ENERGY_USE;
 	
-	public ArrayList<ItemStack> upgrades;
-	public ArrayList<ItemStack> blueprints;
+	public ArrayList<ItemStack> upgrades = new ArrayList<ItemStack>();
+	public ArrayList<ItemStack> blueprints = new ArrayList<ItemStack>();
 	
 	public TileEntityMachineBase(String name, int inventorySlots, int maxEnergy)
 	{

@@ -16,9 +16,6 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 	private int processTime;
 	private int processMax;
 	
-	//public final int UPGRADE_SLOT = 26;
-	//public final int BLUEPRINT_SLOT = 34;
-	
 	public ArrayList<ItemStack> blueprints;
 	
 	public TileEntityCircuitAssembler()
@@ -27,6 +24,7 @@ public class TileEntityCircuitAssembler extends TileEntityMultiblockPart<TileEnt
 		
 		this.UPGRADE_SLOT = 26;
 		this.BLUEPRINT_SLOT = 34;
+		this.ENERGY_USE = 0;
 	}
 
 	@Override
