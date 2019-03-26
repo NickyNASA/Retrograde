@@ -24,6 +24,7 @@ public class ContainerMachineBase extends ContainerRetrograde
 
 	/*
 	Might need to add the blueprint arrayList to the detectAndSendChanges function.
+	Removed the ContainerBlueprintBase.java class
 	 */
 	public void onAddBlueprintPacket()
 	{
